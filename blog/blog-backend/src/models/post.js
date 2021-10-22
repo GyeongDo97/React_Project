@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose,{ Schema } from 'mongoose';
 
 // 스키마를 만들 때 mongoose 모듈의 Schema를 사용하여 정의할 수 있게 사용
-const { Schema } = mongoose;
+// const { Schema } = mongoose;
 
 // 각 필드 이름과 데이터 타입을 작성
 const PostSchema = new Schema({
@@ -12,6 +12,11 @@ const PostSchema = new Schema({
     type: Date,
     default: Date.now, // 현재 날짜를 기본 값으로 지정
   },
+  user:{
+    _id : mongoose.Types.ObjectId,
+    username:String,
+  }
+  
 });
 
 // 모델 인스턴스 생성
